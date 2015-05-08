@@ -1,73 +1,17 @@
 [
     {
-        "day": "Monday",
-        "highTemperature": 28,
+        "index": 1,
+        "title": "골드바 1g",
+        "price": "45,000원",
         "lowTemperature": 14,
-        "image": "shower"
+        "image": "goldbar.jpg",
+        "content":"골드바 입다니 금사서 재테크 하세요~!!"
     }, {
-        "day": "Tuesday",
-        "highTemperature": 35,
+        "index": 2,
+        "title": "반지",
+        "price": "50,000원",
         "lowTemperature": 18,
-        "image": "sunny"
-    }, {
-        "day": "Wednesday",
-        "highTemperature": 30,
-        "lowTemperature": 16,
-        "image": "partly-sunny"
-    }, {
-        "day": "Thursday",
-        "highTemperature": 28,
-        "lowTemperature": 13,
-        "image": "sunny"
-    }, {
-        "day": "Friday",
-        "highTemperature": 22,
-        "lowTemperature": 12,
-        "image": "cloudy"
-    }, {
-        "day": "Saturday",
-        "highTemperature": 21,
-        "lowTemperature": 14,
-        "image": "foggy"
-    }, {
-        "day": "Sunday",
-        "highTemperature": 33,
-        "lowTemperature": 15,
-        "image": "storm"
-    }, {
-        "day": "Monday",
-        "highTemperature": 28,
-        "lowTemperature": 14,
-        "image": "shower"
-    }, {
-        "day": "Tuesday",
-        "highTemperature": 35,
-        "lowTemperature": 18,
-        "image": "sunny"
-    }, {
-        "day": "Wednesday",
-        "highTemperature": 30,
-        "lowTemperature": 16,
-        "image": "partly-sunny"
-    }, {
-        "day": "Thursday",
-        "highTemperature": 28,
-        "lowTemperature": 13,
-        "image": "sunny"
-    }, {
-        "day": "Friday",
-        "highTemperature": 22,
-        "lowTemperature": 12,
-        "image": "cloudy"
-    }, {
-        "day": "Saturday",
-        "highTemperature": 21,
-        "lowTemperature": 14,
-        "image": "foggy"
-    }, {
-        "day": "Sunday",
-        "highTemperature": 33,
-        "lowTemperature": 15,
-        "image": "storm"
-    } 
+        "image": "goldring.jpg",
+        "content":"금반지입니다."
+    }
 ]

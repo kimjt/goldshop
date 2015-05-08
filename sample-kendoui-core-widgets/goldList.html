@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+            <div id="tabstrip-home"
+                data-role="view"
+                data-title="상품목록"
+                data-model="app.weatherService.viewModel">
+                <header data-role="header">
+                    <div data-role="navbar">
+                        <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
+                        <span data-role="view-title"></span>
+                        <a id="search" data-role="button" data-align="right" data-icon="search" onclick="search();"></a>
+                        <a href="cart.html" data-role="button" data-align="right" data-icon="cart"></a>
+                    </div>
+                    <input type="search" class="map-tools-input" style="display: none;" id="searchput"/>
+                </header>
+
+                <ul data-role="listview" data-style="inset"
+                    data-bind="source: weatherDataSource"
+                    data-template="weather-forecast-template">
+                </ul>
+            </div>
+            <p>상품 리스트</p>
+            <script id="weather-forecast-template" type="text/x-kendo-tmpl">
+                <div class="w-item-template">
+                <a id="product" href="productDetails.html?index=${index}" data-role="button">
+                    <img src="styles/images/${image}" width="100%;" height="100%;"/>
+                    <h4 id="title" class="w-date">${title}</h4>
+                    <p>${index}</p>
+                    <div class="w-temp">
+                        <span>${price}</span>
+                    </div>
+                </a>
+                </div>
+           </script>
+            
+    </body>
+</html>

@@ -4,38 +4,48 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <link href="styles/main.css" rel="stylesheet" />
     <link href="styles/logoimages.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
     <script src="scripts/app.js"></script>
     <script src="scripts/login.js"></script>
-    <script src="scripts/location.js"></script>
     <script src="scripts/weather.js"></script>
+    <script>
+          $(document).ready(function(){
+                $("#search").click(function(){
+                    $("#searchput").show();
+                });
+                
+            });
+            
+        function url(){
+            var link =  document.location.href;
+            alert(link);
+        }
+           
+    </script>
 </head>
 <body>
     <!--Home View-->
     <div id="tabstrip-home"
         data-role="view"
-        data-title="Home">
+        data-title="Gold Shop">
         <header data-role="header">
             <div data-role="navbar">
+                <a href="searchView.html" data-role="button" data-align="left" data-icon="search"></a>
                 <span data-role="view-title"></span>
-                <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
+                <a href="cart.html" data-role="button" data-align="right" data-icon="cart"></a>
             </div>
         </header>
 
-        <h3>Welcome!</h3>
-        <p>
-            Telerik AppBuilder&trade; enables you to build cross-platform device applications regardless of your
-            development platform by combining the convenience of a local development toolset with the
-            power and flexibility of the cloud.
-        </p>
-        <div class="welcome-image"></div>
+        <h3>메인화면</h3>
+        <a href="goldList.html" data-role="button" data-id="goldbar"><img src="styles/images/goldbar.jpg" width="100px;" height="100px;"/></a>
+        <a href="goldList.html" data-role="button" data-id="goldring"><img src="styles/images/goldring.jpg" width="100px;" height="100px;"/></a>
     </div>
 
     <!--Login View-->
@@ -69,54 +79,6 @@
         </form>
     </div>
 
-    <!--Location View-->
-    <div id="tabstrip-location"
-        data-role="view"
-        data-title="Location"
-        data-init="app.locationService.initLocation"
-        data-show="app.locationService.show"
-        data-hide="app.locationService.hide"
-        data-model="app.locationService.viewModel"
-        data-stretch="true">
-
-        <div id="map-canvas" class="map" data-bind="visible: isGoogleMapsInitialized"></div>
-
-        <div id="no-map" data-bind="invisible: isGoogleMapsInitialized">
-            <h3>Location requires internet connection to display the map.</h3>
-        </div>
-        <div id="map-search-wrap" class="map-tools" data-bind="visible: isGoogleMapsInitialized, invisible: hideSearch">
-            <div>
-                <button id="map-navigate-home" class="map-tools-button home" data-bind="click: onNavigateHome"></button>
-                <input id="map-address" type="search" class="map-tools-input" data-bind="value: address" placeholder="Address" />
-                <button id="map-search" class="map-tools-button search" data-bind="click: onSearchAddress"></button>
-            </div>
-        </div>
-    </div>
-
-    <!--Weather View-->
-    <div id="tabstrip-weather"
-        data-role="view"
-        data-title="Weather"
-        data-model="app.weatherService.viewModel">
-
-        <ul data-role="listview" data-style="inset"
-            data-bind="source: weatherDataSource"
-            data-template="weather-forecast-template">
-        </ul>
-    </div>
-
-    <!--Weather forecast template-->
-    <script id="weather-forecast-template" type="text/x-kendo-tmpl">
-        <div class="w-item-template">
-            <span class="w-icon ${image}"></span>
-            <h4 class="w-date">${day}</h4>
-            <div class="w-temp">
-                <span>${highTemperature}<sup>&deg;</sup></span>
-                <span>${lowTemperature}<sup>&deg;</sup></span>
-            </div>
-        </div>
-    </script>
-
     <!--Layout-->
     <div data-role="layout" data-id="tabstrip-layout">
         <!--Header-->
@@ -130,9 +92,9 @@
         <div data-role="footer">
             <div data-role="tabstrip">
                 <a href="#/" data-icon="home">Home</a>
-                <a href="#tabstrip-login" data-icon="contacts">Login</a>
-                <a href="#tabstrip-location" data-icon="search">Location</a>
-                <a href="#tabstrip-weather" data-icon="globe">Weather</a>
+                <a href="shop.html" data-icon="globe">배송조회</a>
+                <a href="buyHistory.html" data-icon="history">구매내역</a>
+                <a href="wishList.html" data-icon="toprated">관심상품</a>
             </div>
         </div>
     </div>

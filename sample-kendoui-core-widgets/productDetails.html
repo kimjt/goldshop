@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        
+    </head>
+    <body>
+        <div id="tabstrip-home"
+        data-role="view"
+        data-title="상품 상세보기">
+        <header data-role="header">
+            <div data-role="navbar">
+                <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
+                <span data-role="view-title"></span>
+                <a href="cart.html" data-role="button" data-align="right" data-icon="cart"></a>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset"
+            data-bind="source: weatherDataSource"
+            data-template="weather-forecast-template">
+        </ul>
+        <h3>상세보기</h3>
+        <input type="text" id="index" name="index" value="${index}"/>${param.index}
+        <img src="styles/images/goldbar.jpg" width="100px;" height="100px;"/>
+        <button onclick="url();">test</button>
+    </div>
+    </body>
+</html>
