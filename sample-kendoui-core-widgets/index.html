@@ -20,12 +20,13 @@
                 $("#search").click(function(){
                     $("#searchput").show();
                 });
-                
             });
             
         function url(){
             var link =  document.location.href;
-            alert(link);
+            var num = link.split("=");
+            alert(num[1]);
+            $("#index").val(num[1]);
         }
            
     </script>

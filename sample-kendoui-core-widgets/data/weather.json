@@ -1,16 +1,23 @@
+
 [
     {
         "index": 1,
         "title": "골드바 1g",
         "price": "45,000원",
-        "lowTemperature": 14,
         "image": "goldbar.jpg",
-        "content":"골드바 입다니 금사서 재테크 하세요~!!"
-    }, {
+        "content":"<h3>골드바</h3> 입다니 금사서 재테크 하세요~!!"
+    }, 
+    {
         "index": 2,
         "title": "반지",
         "price": "50,000원",
-        "lowTemperature": 18,
+        "image": "goldring.jpg",
+        "content":"금반지입니다."
+    },
+    {
+        "index": 3,
+        "title": "",
+        "price": "원",
         "image": "goldring.jpg",
         "content":"금반지입니다."
     }
