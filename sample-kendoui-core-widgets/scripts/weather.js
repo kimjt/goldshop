@@ -22,9 +22,10 @@
                         url: jsonUrlToLoad,
                         dataType: "json"
                     }
-                }
+                },
+                pageSize: 5
             });
-
+            
             that.set("weatherDataSource", dataSource);
         }
     });

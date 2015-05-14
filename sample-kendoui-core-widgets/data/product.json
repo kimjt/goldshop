@@ -1,6 +1,7 @@
 
 [
-    {"index": 1, "title": "골드바 3.75g", "price": "200,000원", "image": "goldbar.jpg", "content":"골드바 입다니 금사서 재테크 하세요~!!"}, 
+    {"index": 0, "title": "골드바 3.75g", "price": "200,000원", "image": "goldbar.jpg", "content":"골드바 금사서 재테크 하세요~!!"}, 
+    {"index": 1, "title": "골드바 7.5g", "price": "400,000원", "image": "goldbar.jpg", "content":"골드바 금사서 재테크 하세요~!!"}, 
     {"index": 2, "title": "순금장수거북이 37.5g", "price": "2,296,000원", "image": "turtle37.5.jpg", "content":" 순금 기념품"},
     {"index": 3, "title": "황금닭 37.5g", "price": "2,296,000원", "image": "chicken.jpg", "content":"순금 기념품"},
     {"index": 4, "title": "순금황소 37.5g", "price": "2,296,000원", "image": "cow.jpg", "content":"순금 기념품"},
