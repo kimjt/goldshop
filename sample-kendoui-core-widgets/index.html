@@ -77,6 +77,7 @@
                 </li>
             </ul>
             <input id="login" type="submit" data-role="button" data-bind="click: onLogin, invisible: isLoggedIn" value="Login" class="login-button" />
+            <input id="member" type="button" data-role="button" data-bind="invisible: isLoggedIn" value="회원가입" class="login-button" onclick="location.href='member.html'" />
         </form>
     </div>
 
@@ -92,7 +93,7 @@
         <!--Footer-->
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="#/" data-icon="home">Home</a>
+                <a href="tabstrip-login" data-icon="home">Home</a>
                 <a href="shop.html" data-icon="globe">배송조회</a>
                 <a href="buyHistory.html" data-icon="history">구매내역</a>
                 <a href="wishList.html" data-icon="toprated">관심상품</a>

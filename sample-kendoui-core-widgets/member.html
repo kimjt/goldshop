@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+        <link href="styles/main.css" rel="stylesheet" />
+        <link href="styles/logoimages.css" rel="stylesheet" />
+
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+        
+        <script src="scripts/app.js"></script>
+        <script src="scripts/member.js"></script>
+        <script language="javascript">
+        </script>
+    </head>
+    <body>
+        <div id="tabstrip-member"
+        data-role="view" data-title="회원가입" data-model="app.weatherService.viewModel">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
+                    <span data-role="view-title"></span>
+                    <a data-role="button" data-align="right" data-icon="search"></a>
+                </div>
+            </header>
+            <dl>
+                <dt>ID:</dt>
+                <dd><input type="text" id="MberId"></dd>
+                <dt>Pass:</dt>
+                <dd><input type="text" id="MberPass"></dd>
+                <dt>Pass2:</dt>
+                <dd><input type="text" id="MberPass2"></dd>
+                <dt>Name:</dt>
+                <dd><input type="text" id="MberName"></dd>
+                <dt>Email:</dt>
+                <dd><input type="text" id="MberEmail"></dd>
+                <dd><button id="createMber" data-bind="click: test">회원가입</button></dd>
+            </dl>
+        
+            <ul data-role="listview" data-style="inset"
+                    data-bind="source: DataSource"
+                    data-template="template">
+            </ul>
+        </div>
+        <script id="template" type="text/x-kendo-tmpl">
+                <div>
+                    <h4>ID : ${MberId}</h4>
+                    <h4>NAME : ${MberName}</h4>
+                    <h4>EMAIL : ${MberEmail}</h4>
+                </div>
+        </script>
+    </body>
+    
+    <!--Layout-->
+    <div data-role="layout" data-id="tabstrip-layout">
+        <!--Header-->
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <div data-role="footer">
+            <div data-role="tabstrip">
+                <a href="tabstrip-login" data-icon="home">Home</a>
+                <a href="shop.html" data-icon="globe">배송조회</a>
+                <a href="buyHistory.html" data-icon="history">구매내역</a>
+                <a href="wishList.html" data-icon="toprated">관심상품</a>
+            </div>
+        </div>
+    </div>
+</html>

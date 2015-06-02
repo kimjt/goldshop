@@ -5,9 +5,23 @@
         <title></title>
     </head>
     <body>
-        <h3>상세보기</h3>
-        <input type="text" id="index" name="index" value=""/>
-        <img src="styles/images/goldbar.jpg" width="100px;" height="100px;"/>
-        <button onclick="url();">test</button>
+        <div data-role="view"
+             data-title="상품"
+                >
+                <header data-role="header">
+                    <div data-role="navbar">
+                        <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
+                        <span data-role="view-title"></span>
+                        <a href="cart.html" data-role="button" data-align="right" data-icon="cart"></a>
+                    </div>
+                    <input type="search" class="map-tools-input" style="display: none;" id="searchput"/>
+                </header>
+            
+            <input type="text" id="index" name="index" value=""/>
+            <img src="styles/images/goldbar.jpg" width="100px;" height="100px;"/>
+            <button onclick="url();">test</button>
+        </div>
+
+        
     </body>
 </html>
