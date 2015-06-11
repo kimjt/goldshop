@@ -1,10 +1,10 @@
 (function (global) {
-    var WeatherViewModel,
+    var SearchViewModel,
         dataSource,
         app = global.app = global.app || {};
 
-    WeatherViewModel = kendo.data.ObservableObject.extend({
-        weatherDataSource: null,
+    SearchViewModel = kendo.data.ObservableObject.extend({
+        searchDataSource: null,
 
         init: function () {
             var that = this,
@@ -15,7 +15,7 @@
             //When you build for Apache Cordova 3.0.0, apply this code instead of using relative URLs. In Apache Cordova 3.0.0, relative URLs might not work properly.
             jsonUrlToLoad = app.makeUrlAbsolute("data/product.json");
             //jsonUrlToLoad = "http://samgital.co.kr:8080/mobile/product.json";
-
+            
             dataSource = new kendo.data.DataSource({
                 transport: {
                     read: {
@@ -25,23 +25,20 @@
                 },
                 pageSize: 10
             });
-            that.set("weatherDataSource", dataSource);
+            
+            that.set("searchResult", dataSource);
         },
-        pageBar: function(){
-            dataSource.filter({field:"type", value:"bar"});
-        },
-        pageRing: function(){
-            dataSource.filter({field:"type", value:"ring"});
-        },
-        pageNeck: function(){
-            dataSource.filter({field:"type", value:"neck"});
-        },
-        pageEarr: function(){
-            dataSource.filter({field:"type", value:"earr"});
+        
+        search: function(){
+            var search,
+                bt;
+            search=document.getElementById("searchValue").value;
+            dataSource.filter({field:"type", value:search});
+            that.set("searchResult", dataSource);
         }
     });
 
-    app.weatherService = {
-        viewModel: new WeatherViewModel()
+    app.searchService = {
+        viewModel: new SearchViewModel()
     };
 })(window);

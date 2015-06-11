@@ -2,12 +2,24 @@
 
 <html>
     <head>
-        <title></title>
+        <script>
+            $(document).ready(function(){
+                 dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                            url: jsonUrlToLoad,
+                            dataType: "json"
+                        }
+                    },
+                    pageSize: 5
+                });
+                dataSource.filter({field:"index", value:1});
+                this.set("details", dataSource);
+            });
+        </script>
     </head>
     <body>
-        <div data-role="view"
-             data-title="상품"
-                >
+        <div data-role="view" data-title="상품">
                 <header data-role="header">
                     <div data-role="navbar">
                         <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
@@ -16,12 +28,28 @@
                     </div>
                     <input type="search" class="map-tools-input" style="display: none;" id="searchput"/>
                 </header>
-            
+            <ul data-role="listview" data-style="inset"
+                    data-bind="source: details"
+                    data-template="weather-forecast-template">
+            </ul>
             <input type="text" id="index" name="index" value=""/>
             <img src="styles/images/goldbar.jpg" width="100px;" height="100px;"/>
             <button onclick="url();">test</button>
         </div>
-
+       <script id="weather-forecast-template" type="text/x-kendo-tmpl">
+            <div class="w-item-template" style="width: 100%;">
+                <a id="product" href="productDetails.html?index=${index}" data-role="button"  style="width: 100%;">
+                    <img src="styles/images/${image}" width="100%;" height="100%;"/>
+                    <h4 id="title" class="w-date">${title}</h4>
+                    <p>${index}</p>
+                    <div class="w-temp">
+                        <span>${price}</span><br>
+                        <span>${content}</span>
+                    </div>
+                    <div id="pager" class="k-pager-wrap"></div>
+                </a>
+            </div>
+       </script>
         
     </body>
 </html>
