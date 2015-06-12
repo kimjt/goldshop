@@ -1,9 +1,9 @@
 (function (global) {
-    var WeatherViewModel,
+    var MemberViewModel,
         dataSource,
         app = global.app = global.app || {};
 
-    WeatherViewModel = kendo.data.ObservableObject.extend({
+    MemberViewModel = kendo.data.ObservableObject.extend({
         DataSource: null,
 
         init: function () {
@@ -17,7 +17,7 @@
             //jsonUrlToLoad = app.makeUrlAbsolute("data/member.json");
             //jsonUrlToCreate = app.makeUrlAbsolute("data/member/create.json");
             jsonUrlToLoad = "http://samgital.co.kr:8080/mobile/member.json";
-            jsonUrlToCreate = "http://samgital.co.kr:8080/mobile/member/createw.json";
+            jsonUrlToCreate = "http://samgital.co.kr:8080/mobile/member/create.json";
 
             dataSource = new kendo.data.DataSource({
                 transport: {
@@ -32,33 +32,35 @@
                     }
                 }
             });
-            //addEventListener("click", function(){
-             // dataSource.sync();
-            //});
+            dataSource.sync();
             that.set("DataSource", dataSource);
         },
         
         test: function(){
             var pass = document.getElementById("MberPass").value;
             var pass1 = document.getElementById("MberPass2").value;
-            if(pass===pass1){
-            dataSource.add({MberId:$("#MberId").val(), MberPass:$("#MberPass").val(),MberName:$("#MberName").val(),MberEmail:$("#MberEmail").val()});
-            $("#MberId").val('');
-            $("#MberPass").val('');
-            $("#MberPass2").val('');
-            $("#MberName").val('');
-            $("#MberEmail").val('');
-            dataSource.create();
-            dataSource.sync();
+            if($("#MberId").val()===""||$("#MberPass").val()===""||$("#MberName").val()===""||$("#MberEmail").val()===""){
+                alert("입력해주세요.");
             }else{
-                alert("비밀번호를 확인해 주세요");
+                if(pass===pass1){
+                dataSource.add({MberId:$("#MberId").val(), MberPass:$("#MberPass").val(),MberName:$("#MberName").val(),MberEmail:$("#MberEmail").val()});
+                $("#MberId").val('');
                 $("#MberPass").val('');
                 $("#MberPass2").val('');
+                $("#MberName").val('');
+                $("#MberEmail").val('');
+                dataSource.create();
+                dataSource.sync();
+                }else{
+                    alert("비밀번호를 확인해 주세요");
+                    $("#MberPass").val('');
+                    $("#MberPass2").val('');
+                }
             }
         }
     });
 
-    app.weatherService = {
-        viewModel: new WeatherViewModel()
+    app.memberService = {
+        viewModel: new MemberViewModel()
     };
 })(window);
