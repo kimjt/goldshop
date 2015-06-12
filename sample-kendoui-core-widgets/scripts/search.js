@@ -30,11 +30,15 @@
         },
         
         search: function(){
-            var search,
-                bt;
+            var search;
             search=document.getElementById("searchValue").value;
-            dataSource.filter({field:"type", value:search});
-            that.set("searchResult", dataSource);
+            dataSource.filter({field:"type", operator: "eq", value:search});
+            this.set("searchResult", dataSource);
+        },
+        productView: function(){
+            var title = document.getElementById("title").value;
+            dataSource.filter({field:"title", value:title});
+            this.set("viewDataSource", dataSource);
         }
     });
 
