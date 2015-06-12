@@ -38,6 +38,11 @@
         },
         pageEarr: function(){
             dataSource.filter({field:"type", value:"earr"});
+        },
+        productView: function(){
+            var title = document.getElementById("title").value;
+            dataSource.filter({field:"title", value:title});
+            this.set("viewDataSource", dataSource);
         }
     });
 
