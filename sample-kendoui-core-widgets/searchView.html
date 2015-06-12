@@ -13,7 +13,7 @@
                 <header data-role="header">
                     <div data-role="navbar">
                         <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
-                        <input type="search" id="searchValue" class="map-tools-input">
+                        <input type="text" id="searchValue" class="map-tools-input">
                         <a data-role="button" data-align="right" data-icon="search" id="search" data-bind="click: search"></a>
                     </div>
                 </header>
@@ -22,17 +22,16 @@
                     data-bind="source: searchResult"
                     data-template="weather-forecast-template">
                 </ul>
-            </div>
+        </div>
             <p>상품 리스트</p>
             <script id="weather-forecast-template" type="text/x-kendo-tmpl">
                 <div class="w-item-template" style="width: 100%;">
-                <a id="product" href="productDetails.html?index=${index}" data-role="button"  style="width: 100%;">
-                    <img src="styles/images/${image}" width="100%;" height="100%;"/>
+                <a id="product" href="productDetails.html" data-role="button"  style="width: 100%;">
+                    <img src="styles/images/${image}" width="100%;" height="100%;" data-bind="click: productView"/>
                     <h4 id="title" class="w-date">${title}</h4>
-                    <p>${index}</p>
+                    <input type="hidden" id="title" value="${title}"/>
                     <div class="w-temp">
-                        <span>${price}</span><br>
-                        <span>${content}</span>
+                        <span>${price}</span>
                     </div>
                     <div id="pager" class="k-pager-wrap"></div>
                 </a>
