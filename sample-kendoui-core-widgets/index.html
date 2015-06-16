@@ -6,23 +6,24 @@
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <link href="styles/main.css" rel="stylesheet" />
-    <link href="styles/logoimages.css" rel="stylesheet" />
-
+    <link href="styles/logoimages.css" rel="stylesheet" />    
+    
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/jquery.min.js"></script>
     <script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/jszip.min.js"></script>
+    
     <script src="scripts/app.js"></script>
     <script src="scripts/login.js"></script>
-    <script src="scripts/weather.js"></script>
-    <script src="scripts/search.js"></script>
+    <script src="scripts/product.js"></script>
+    <script src="scripts/sha512.js"></script>
+    <script src="scripts/gibberish-aes.js"></script>
     <script>
-          $(document).ready(function(){
-                $("#search").click(function(){
-                    $("#searchput").show();
-                });
-            });
-            
+        var key = "abcdefghijklmnopqrstuvwxyz123456";
+        
+        
         function url(){
             var link =  document.location.href;
             var num = link.split("=");
@@ -30,6 +31,35 @@
             $("#index").val(num[1]);
         }
            
+        function shatest(){
+            alert("test");
+            var txt = "test";
+            var sing = hex_sha512(txt);
+            alert(sing);
+        }
+        
+        function aesencoding(){
+            var txt = document.getElementById("text1").value;
+            var ko_encrypt = AES_Encode(txt);
+            document.getElementById("testValue").value = ko_encrypt;
+        }
+        function aesdecoding(){
+            var txt = document.getElementById("text1").value;
+			var ko_decrypt = AES_Decode(txt);
+			document.getElementById("testValue").value = ko_decrypt;
+		}
+		function AES_Encode(plain_text)
+		{
+			GibberishAES.size(256);	
+			return GibberishAES.aesEncrypt(plain_text, key);
+		}
+
+		function AES_Decode(base64_text)
+		{
+			GibberishAES.size(256);	
+			return GibberishAES.aesDecrypt(base64_text, key);
+		}
+        
     </script>
 </head>
 <body>
@@ -48,9 +78,14 @@
 
         <h3>메인화면</h3>
         <a href="goldList.html" data-role="button" data-bind="click: pageBar"><img src="styles/images/goldbar.jpg" width="100px;" height="100px;"/></a>
-        <a href="goldList.html?type=ring" data-role="button" data-bind="click: pageRing"><img src="styles/images/goldring.jpg" width="100px;" height="100px;"/></a>
-        <a href="goldList.html?type=neck" data-role="button" data-bind="click: pageNeck"><img src="styles/images/necklace.jpg" width="100px;" height="100px;"/></a>
-        <a href="goldList.html?type=earr" data-role="button" data-bind="click: pageEarr"><img src="styles/images/earring.jpg" width="100px;" height="100px;"/></a>
+        <a href="goldList.html" data-role="button" data-bind="click: pageRing"><img src="styles/images/goldring.jpg" width="100px;" height="100px;"/></a>
+        <a href="goldList.html" data-role="button" data-bind="click: pageNeck"><img src="styles/images/necklace.jpg" width="100px;" height="100px;"/></a>
+        <a href="goldList.html" data-role="button" data-bind="click: pageEarr"><img src="styles/images/earring.jpg" width="100px;" height="100px;"/></a>
+        <button onclick="shatest();">test</button>
+        <input type="text" id="text1"/>
+        <button onclick="aesencoding();">인코딩</button>
+        <button onclick="aesdecoding();">디코딩</button><br>
+        <input type="text" id="testValue" />
     </div>
 
     <!--Login View-->

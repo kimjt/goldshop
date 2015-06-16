@@ -1,10 +1,10 @@
 (function (global) {
-    var SearchViewModel,
+    var WeatherViewModel,
         dataSource,
         app = global.app = global.app || {};
 
-    SearchViewModel = kendo.data.ObservableObject.extend({
-        searchDataSource: null,
+    WeatherViewModel = kendo.data.ObservableObject.extend({
+        weatherDataSource: null,
 
         init: function () {
             var that = this,
@@ -13,9 +13,9 @@
             kendo.data.ObservableObject.fn.init.apply(that, []);
 
             //When you build for Apache Cordova 3.0.0, apply this code instead of using relative URLs. In Apache Cordova 3.0.0, relative URLs might not work properly.
-            jsonUrlToLoad = app.makeUrlAbsolute("data/product.json");
-            //jsonUrlToLoad = "http://samgital.co.kr:8080/mobile/product.json";
-            
+            //jsonUrlToLoad = app.makeUrlAbsolute("data/product.json");
+            jsonUrlToLoad = "http://samgital.co.kr:8080/mobile/product.json";
+
             dataSource = new kendo.data.DataSource({
                 transport: {
                     read: {
@@ -25,10 +25,20 @@
                 },
                 pageSize: 10
             });
-            
-            that.set("searchResult", dataSource);
+            that.set("weatherDataSource", dataSource);
         },
-        
+        pageBar: function(){
+            dataSource.filter({field:"type", value:"bar"});
+        },
+        pageRing: function(){
+            dataSource.filter({field:"type", value:"ring"});
+        },
+        pageNeck: function(){
+            dataSource.filter({field:"type", value:"neck"});
+        },
+        pageEarr: function(){
+            dataSource.filter({field:"type", value:"earr"});
+        },
         search: function(){
             var search;
             search=document.getElementById("searchValue").value;
@@ -42,7 +52,7 @@
         }
     });
 
-    app.searchService = {
-        viewModel: new SearchViewModel()
+    app.weatherService = {
+        viewModel: new WeatherViewModel()
     };
 })(window);

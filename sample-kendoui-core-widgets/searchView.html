@@ -6,10 +6,10 @@
         <link href="styles/main.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="tabstrip-home"
+        <div 
                 data-role="view"
                 data-title="상품목록"
-                data-model="app.searchService.viewModel">
+                data-model="app.weatherService.viewModel">
                 <header data-role="header">
                     <div data-role="navbar">
                         <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
@@ -26,12 +26,12 @@
             <p>상품 리스트</p>
             <script id="weather-forecast-template" type="text/x-kendo-tmpl">
                 <div class="w-item-template" style="width: 100%;">
-                <a id="product" href="productDetails.html" data-role="button"  style="width: 100%;">
-                    <img src="styles/images/${image}" width="100%;" height="100%;" data-bind="click: productView"/>
-                    <h4 id="title" class="w-date">${title}</h4>
+                <a href="productDetails.html" data-role="button"  style="width: 100%;"  data-bind="click: productView">
+                    <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="100%;" height="100%;"/>
                     <input type="hidden" id="title" value="${title}"/>
+                    <h4 id="title" class="w-date">${title}</h4>
                     <div class="w-temp">
-                        <span>${price}</span>
+                        <span>#:kendo.toString(price, "\\#\\#,\\#")# 원</span>
                     </div>
                     <div id="pager" class="k-pager-wrap"></div>
                 </a>

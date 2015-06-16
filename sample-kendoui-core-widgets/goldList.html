@@ -13,7 +13,7 @@
                     <div data-role="navbar">
                         <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
                         <span data-role="view-title"></span>
-                        <a id="search" data-role="button" data-align="right" data-icon="search" onclick="search();"></a>
+                        <a id="sbt" data-role="button" data-align="right" data-icon="search" onclick="search();"></a>
                         <a href="cart.html" data-role="button" data-align="right" data-icon="cart"></a>
                     </div>
                     <input type="search" class="map-tools-input" style="display: none;" id="searchput"/>
@@ -27,12 +27,12 @@
             <p>상품 리스트</p>
             <script id="weather-forecast-template" type="text/x-kendo-tmpl">
                 <div class="w-item-template" style="width: 100%;">
-                <a href="productDetails.html" data-role="button"  style="width: 100%;">
-                    <img src="styles/images/${image}" width="100%;" height="100%;" data-bind="click: productView"/>
+                <a href="productDetails.html" data-role="button"  style="width: 100%;"  data-bind="click: productView">
+                    <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="100%;" height="100%;"/>
                     <input type="hidden" id="title" value="${title}"/>
                     <h4 id="title" class="w-date">${title}</h4>
                     <div class="w-temp">
-                        <span>${price}</span>
+                        <span>#:kendo.toString(price, "\\#\\#,\\#")# 원</span>
                     </div>
                     <div id="pager" class="k-pager-wrap"></div>
                 </a>

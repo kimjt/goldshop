@@ -1,50 +1,50 @@
 [
     {"title":"bar","product":
         [
-            {"index": 0, "title": "골드바 3.75g", "price": "200,000원", "image": "goldbar.jpg", "content":"골드바 금사서 재테크 하세요~!!"}, 
-            {"index": 1, "title": "골드바 7.5g", "price": "400,000원", "image": "goldbar.jpg", "content":"골드바 금사서 재테크 하세요~!!"}
+            {"index": 0, "title": "골드바 3.75g", "price": 200000, "image": "goldbar.jpg", "content":"골드바 금사서 재테크 하세요~!!"}, 
+            {"index": 1, "title": "골드바 7.5g", "price": 400000, "image": "goldbar.jpg", "content":"골드바 금사서 재테크 하세요~!!"}
         ]
     }, 
     {"title":"gold","product":
         [
-            {"index": 0, "title": "순금장수거북이 37.5g", "price": "2,296,000원", "image": "turtle37.5.jpg", "content":" 순금 기념품"},
-            {"index": 1, "title": "황금닭 37.5g", "price": "2,296,000원", "image": "chicken.jpg", "content":"순금 기념품"},
-            {"index": 2, "title": "순금황소 37.5g", "price": "2,296,000원", "image": "cow.jpg", "content":"순금 기념품"},
-            {"index": 3, "title": "순금 용 37.5g", "price": "2,296,000원", "image": "dragon.jpg", "content":"순금 기념품"},
-            {"index": 4, "title": "황금알 37.5g", "price": "2,296,000원", "image": "egg.jpg", "content":"순금 기념품"},
-            {"index": 5, "title": "순금행운의키 37.5g", "price": "2,296,000원", "image": "key.jpg", "content":"순금 기념품"},
-            {"index": 6, "title": "순금복돼지 37.5g", "price": "2,296,000원", "image": "pig.jpg", "content":"순금 기념품"},
-            {"index": 7, "title": "순금토끼 37.5g", "price": "2,296,000원", "image": "rabbit.jpg", "content":"순금 기념품"},
-            {"index": 8, "title": "순금 양 37.5g", "price": "2,296,000원", "image": "sheep.jpg", "content":"순금 기념품"},
-            {"index": 9, "title": "순금호랑이 37.5g", "price": "2,296,000원", "image": "tiger.jpg", "content":"순금 기념품"},
-            {"index": 10, "title": "순금두꺼비 37.5g", "price": "2,296,000원", "image": "toad.jpg", "content":"순금 기념품"}
+            {"index": 0, "title": "순금장수거북이 37.5g", "price": "2296000", "image": "turtle37.5.jpg", "content":" 순금 기념품"},
+            {"index": 1, "title": "황금닭 37.5g", "price": "2296000", "image": "chicken.jpg", "content":"순금 기념품"},
+            {"index": 2, "title": "순금황소 37.5g", "price": "2296000", "image": "cow.jpg", "content":"순금 기념품"},
+            {"index": 3, "title": "순금 용 37.5g", "price": "2296000", "image": "dragon.jpg", "content":"순금 기념품"},
+            {"index": 4, "title": "황금알 37.5g", "price": "2296000", "image": "egg.jpg", "content":"순금 기념품"},
+            {"index": 5, "title": "순금행운의키 37.5g", "price": "2296000", "image": "key.jpg", "content":"순금 기념품"},
+            {"index": 6, "title": "순금복돼지 37.5g", "price": "2296000", "image": "pig.jpg", "content":"순금 기념품"},
+            {"index": 7, "title": "순금토끼 37.5g", "price": "2296000", "image": "rabbit.jpg", "content":"순금 기념품"},
+            {"index": 8, "title": "순금 양 37.5g", "price": "2296000", "image": "sheep.jpg", "content":"순금 기념품"},
+            {"index": 9, "title": "순금호랑이 37.5g", "price": "2296000", "image": "tiger.jpg", "content":"순금 기념품"},
+            {"index": 10, "title": "순금두꺼비 37.5g", "price": "2296000", "image": "toad.jpg", "content":"순금 기념품"}
         ]    
     },
     {"title":"ring","product":
         [
-            {"index": 0, "title": "순금말 반지 3.75g", "price": "240,000원", "image": "hoseRing.jpg", "content":"돌반지(1돈)"},
-            {"index": 1, "title": "순금 반지 3.75g", "price": "240,000원", "image": "goldring.jpg", "content":"돌반지(1돈)"},
-            {"index": 2, "title": "순금아기 반지 3.75g", "price": "240,000원", "image": "babyRing.jpg", "content":"돌반지(1돈)"},
-            {"index": 3, "title": "순금호랑이 반지 3.75g", "price": "240,000원", "image": "tigerRing.jpg", "content":"돌반지(1돈)"},
-            {"index": 4, "title": "순금뱀 반지 3.75g", "price": "240,000원", "image": "snakeRing.jpg", "content":"돌반지(1돈)"},
-            {"index": 5, "title": "순금양 반지 3.75g", "price": "240,000원", "image": "sheepRing.jpg", "content":"돌반지(1돈)"},
-            {"index": 6, "title": "순금토끼 반지 3.75g", "price": "240,000원", "image": "rabbitRing.jpg", "content":"돌반지(1돈)"},
-            {"index": 7, "title": "순금돼지 반지 3.75g", "price": "240,000원", "image": "pigRing.jpg", "content":"돌반지(1돈)"},
-            {"index": 8, "title": "GRL01 순금반지 7.5g", "price": "550,000원", "image": "ring1.jpg", "content":"금반지"},
-            {"index": 9, "title": "GRL02 순금반지 7.5g", "price": "560,000원", "image": "ring2.jpg", "content":"금반지"}, 
-            {"index": 10, "title": "GRL03 순금반지 7.5g", "price": "560,000원", "image": "ring3.jpg", "content":"금반지"},
-            {"index": 11, "title": "GRL04 순금반지 7.5g", "price": "590,000원", "image": "ring4.jpg", "content":"금반지"},
-            {"index": 12, "title": "GRL05 순금반지 7.5g", "price": "580,000원", "image": "ring5.jpg", "content":"금반지"},
-            {"index": 13, "title": "GRL06 순금반지 7.5g", "price": "570,000d원", "image": "ring6.jpg", "content":"금반지"},
-            {"index": 14, "title": "GRL07 순금반지 7.5g", "price": "560,000원", "image": "ring7.jpg", "content":"금반지"},
-            {"index": 15, "title": "GRL08 순금반지 7.5g", "price": "560,000원", "image": "ring8.jpg", "content":"금반지"},
-            {"index": 16, "title": "GRL09 순금반지 7.5g", "price": "550,000원", "image": "ring9.jpg", "content":"금반지"},
-            {"index": 17, "title": "GRL10 순금반지 7.5g", "price": "560,000원", "image": "ring10.jpg", "content":"금반지"},
-            {"index": 18, "title": "GRL11 순금반지 7.5g", "price": "550,000원", "image": "ring11.jpg", "content":"금반지"},
-            {"index": 19, "title": "GRL12 순금반지 7.5g", "price": "570,000원", "image": "ring12.jpg", "content":"금반지"}, 
-            {"index": 20, "title": "GRL13 순금반지 7.5g", "price": "570,000원", "image": "ring13.jpg", "content":"금반지"},
-            {"index": 21, "title": "GRL14 순금반지 7.5g", "price": "550,000원", "image": "ring14.jpg", "content":"금반지"},
-            {"index": 22, "title": "GRL15 순금반지 7.5g", "price": "560,000원", "image": "ring15.jpg", "content":"금반지"}
+            {"index": 0, "title": "순금말 반지 3.75g", "price": "240000", "image": "hoseRing.jpg", "content":"돌반지(1돈)"},
+            {"index": 1, "title": "순금 반지 3.75g", "price": "240000", "image": "goldring.jpg", "content":"돌반지(1돈)"},
+            {"index": 2, "title": "순금아기 반지 3.75g", "price": "240000", "image": "babyRing.jpg", "content":"돌반지(1돈)"},
+            {"index": 3, "title": "순금호랑이 반지 3.75g", "price": "240000", "image": "tigerRing.jpg", "content":"돌반지(1돈)"},
+            {"index": 4, "title": "순금뱀 반지 3.75g", "price": "240000", "image": "snakeRing.jpg", "content":"돌반지(1돈)"},
+            {"index": 5, "title": "순금양 반지 3.75g", "price": "240000", "image": "sheepRing.jpg", "content":"돌반지(1돈)"},
+            {"index": 6, "title": "순금토끼 반지 3.75g", "price": "240000", "image": "rabbitRing.jpg", "content":"돌반지(1돈)"},
+            {"index": 7, "title": "순금돼지 반지 3.75g", "price": "240000", "image": "pigRing.jpg", "content":"돌반지(1돈)"},
+            {"index": 8, "title": "GRL01 순금반지 7.5g", "price": "550000", "image": "ring1.jpg", "content":"금반지"},
+            {"index": 9, "title": "GRL02 순금반지 7.5g", "price": "560000", "image": "ring2.jpg", "content":"금반지"}, 
+            {"index": 10, "title": "GRL03 순금반지 7.5g", "price": "560000", "image": "ring3.jpg", "content":"금반지"},
+            {"index": 11, "title": "GRL04 순금반지 7.5g", "price": "590000", "image": "ring4.jpg", "content":"금반지"},
+            {"index": 12, "title": "GRL05 순금반지 7.5g", "price": "580000", "image": "ring5.jpg", "content":"금반지"},
+            {"index": 13, "title": "GRL06 순금반지 7.5g", "price": "570000d", "image": "ring6.jpg", "content":"금반지"},
+            {"index": 14, "title": "GRL07 순금반지 7.5g", "price": "560000", "image": "ring7.jpg", "content":"금반지"},
+            {"index": 15, "title": "GRL08 순금반지 7.5g", "price": "560000", "image": "ring8.jpg", "content":"금반지"},
+            {"index": 16, "title": "GRL09 순금반지 7.5g", "price": "550000", "image": "ring9.jpg", "content":"금반지"},
+            {"index": 17, "title": "GRL10 순금반지 7.5g", "price": "560000", "image": "ring10.jpg", "content":"금반지"},
+            {"index": 18, "title": "GRL11 순금반지 7.5g", "price": "550000", "image": "ring11.jpg", "content":"금반지"},
+            {"index": 19, "title": "GRL12 순금반지 7.5g", "price": "570000", "image": "ring12.jpg", "content":"금반지"}, 
+            {"index": 20, "title": "GRL13 순금반지 7.5g", "price": "570000", "image": "ring13.jpg", "content":"금반지"},
+            {"index": 21, "title": "GRL14 순금반지 7.5g", "price": "550000", "image": "ring14.jpg", "content":"금반지"},
+            {"index": 22, "title": "GRL15 순금반지 7.5g", "price": "560000", "image": "ring15.jpg", "content":"금반지"}
         ]
     },
     {"title":"necklace","product":
