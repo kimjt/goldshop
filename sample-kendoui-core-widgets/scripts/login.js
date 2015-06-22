@@ -13,8 +13,8 @@
                 password = that.get("password").trim();
 
             if (username === "" || password === "") {
-                navigator.notification.alert("Both fields are required!",
-                    function () { }, "Login failed", 'OK');
+                navigator.notification.alert("ID / 비밀번호를 입력해주세요.",
+                    function () { }, "실패", 'OK');
 
                 return;
             }

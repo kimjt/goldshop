@@ -4,17 +4,67 @@
     <head>
         <title></title>
     </head>
-    <body>
-        <div id="tabstrip-home"
+    <body onload="set()">
+        <div id="tabstrip-cart"
         data-role="view"
-        data-title="Cart">
+        data-title="Cart"
+        data-model="app.weatherService.viewModel">
             <header data-role="header">
                 <div data-role="navbar">
                     <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
                     <span data-role="view-title"></span>
                 </div>
             </header>
-            <p>장바구니 상품목록</p>
+            <p>장바구니</p>
+            <table width="100%">
+                <colgroup>
+                    <col width="12%"/>
+                    <col width="50%"/>
+                    <col width="28%"/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>제품</th>
+                        <th>가격</th>
+                    </tr>
+                </thead>   
+                <tbody data-bind="source: cartDataSource"
+                        data-template="cart-forecast-template">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>금액</td>
+                        <td></td>
+                        <td align="right" id="resultPrice">원</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <input type="button" onclick="set()" value="계산"/>
         </div>
+        <script id="cart-forecast-template" type="text/x-kendo-tmpl">
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td style="display:none;"><input type="hidden" id="price" value="${price}" /></td>
+                <td><a href="productDetails.html" data-role="button" data-bind="click: productView" id="viewPage">
+                <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="50%;" height="50%;"/>${title}</a></td>
+                <td align="right" id=""><span>#:kendo.toString(price, "\\#\\#,\\#")# 원</span></td>
+            </tr>
+            
+        </script>
+        <script>
+            function set(){
+                var prices = document.querySelectorAll("#price");
+                var result=0;
+                var a;
+                for(var i=0;i<prices.length;i++){
+                    a = prices[i].value;
+                    a *=1;
+                    result += a;
+                }
+                result = kendo.toString(result,"##,#");
+                document.getElementById("resultPrice").innerHTML =result+" 원" ;
+            }
+        </script>
     </body>
 </html>

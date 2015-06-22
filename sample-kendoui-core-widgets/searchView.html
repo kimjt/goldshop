@@ -28,6 +28,12 @@
                 <div class="w-item-template" style="width: 100%;">
                 <a href="productDetails.html" data-role="button"  style="width: 100%;"  data-bind="click: productView">
                     <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="100%;" height="100%;"/>
+                    <input type="hidden" id="product_index" value="${index}"/>
+                    <input type="hidden" id="product_title" value="${title}"/>
+                    <input type="hidden" id="product_content" value="${content}"/>
+                    <input type="hidden" id="product_price" value="${price}"/>
+                    <input type="hidden" id="product_img" value="${image}"/>
+                    <input type="hidden" id="product_type" value="${type}"/>
                     <input type="hidden" id="title" value="${title}"/>
                     <h4 id="title" class="w-date">${title}</h4>
                     <div class="w-temp">

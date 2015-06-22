@@ -46,9 +46,54 @@
             this.set("searchResult", dataSource);
         },
         productView: function(){
+            /*var title = document.querySelectorAll("#title");
+            var viewPage = document.querySelectorAll("#viewPage");
+            for(var i=0; i<viewPage.length; i++){
+                viewPage[i].addEventListener("click", function(){
+                    alert(i); 
+                });
+            }*/
             var title = document.getElementById("title").value;
-            dataSource.filter({field:"title", value:title});
+            dataSource.filter({field:"title", operator: "eq", value:title});
             this.set("viewDataSource", dataSource);
+            
+        },
+        cart: function(){
+            var title = document.getElementById("product_title").value,
+                img = document.getElementById("product_img").value,
+                price = document.getElementById("product_price").value,
+                content = document.getElementById("product_content").value,
+                index = document.getElementById("product_index").value,
+                type = document.getElementById("product_type").value;
+
+            var data,
+                key,num=0;
+            data = '{"index": '+ index +', "type": "'+ type +'", "title": "'+ title +'", "price": '+ price +', "image": "'+ img +'", "content":"'+ content +'"}';
+            
+            var num = sessionStorage.length+1;
+            var key = "product_"+num;
+            
+            sessionStorage.setItem(key,data);
+        },
+        cartList: function(){
+            var datas ="[",
+                data,value;
+            for(var i=0;i<sessionStorage.length;i++){
+                data = sessionStorage.getItem("product_"+(i+1));
+                datas += data;
+                if(i<sessionStorage.length-1){
+                    datas += ",";
+                }else if(i===sessionStorage.length-1){
+                    datas +="]"
+                }
+            }
+            /*alert(datas);*/
+            var Jdata = JSON.parse(datas);
+            /*alert(Jdata);*/
+            value = new kendo.data.DataSource({
+                        data: Jdata
+            });
+            this.set("cartDataSource", value);
         }
     });
 
