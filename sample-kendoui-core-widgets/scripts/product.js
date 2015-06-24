@@ -103,6 +103,7 @@
             
             location.href="#cart.html";
         }
+        
     });
 
     app.weatherService = {

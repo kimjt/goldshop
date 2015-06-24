@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div id="tabstrip-home"
+        data-role="view"
+        data-title="paynow">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
+                    <span data-role="view-title"></span>
+                </div>
+            </header>
+             <p>결제팝업요청</p>
+      
+              <a data-role="button" href="#foo" data-rel="popover">Open PopOver</a>
+
+                <div id="foo" data-role="popover">
+                <div data-role="view">
+                      <a data-role="button" data-click="close">Close me</a>
+                </div>
+              </div>
+            
+              <div id="foo" data-role="popover" data-pane='{ "initial": "#view2" }'>
+                <div data-role="view" id="view1" data-title="view1">
+                  결제팝업
+                </div>
+               
+               <div data-role="view" id="view2" data-title="view2">
+                  View 2
+                </div>
+                
+              </div>
+          
+              <a id="product" href="end.html" data-role="button"  style="width: 100%;">확인</a>
+            </div>
+       
+       
+       
+
+<script>
+var app = new kendo.mobile.Application();
+    
+function close() {
+  $("#foo").data("kendoMobilePopOver").close();
+}
+</script>
+    </body>
+</html>
