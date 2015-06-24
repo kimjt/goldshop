@@ -95,6 +95,7 @@
             });
             this.set("cartDataSource", value);
         }
+        
     });
 
     app.weatherService = {
