@@ -4,7 +4,7 @@
     <head>
         <title></title>
     </head>
-    <body onload="set()">
+    <body>
         <div id="tabstrip-cart"
         data-role="view"
         data-title="Cart"
@@ -44,7 +44,7 @@
         </div>
         <script id="cart-forecast-template" type="text/x-kendo-tmpl">
             <tr>
-                <td><input type="checkbox"/></td>
+                <td><input type="checkbox" id="${index}"/></td>
                 <td style="display:none;"><input type="hidden" id="price" value="${price}" /></td>
                 <td><a href="productDetails.html" data-role="button" data-bind="click: productView" id="viewPage">
                 <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="50%;" height="50%;"/>${title}</a></td>
@@ -63,7 +63,7 @@
                     result += a;
                 }
                 result = kendo.toString(result,"##,#");
-                document.getElementById("resultPrice").innerHTML =result+" 원" ;
+                document.getElementById("resultPrice").innerHTML =result+" 원";
             }
         </script>
     </body>

@@ -20,21 +20,24 @@
                 </header>
 
                 <ul data-role="listview" data-style="inset"
-                    data-bind="source: weatherDataSource"
+                    data-bind="source: DataSource"
                     data-template="weather-forecast-template">
                 </ul>
+                <script>
+                   var titles = document.querySelectorAll("#title");
+                   var viewPages = document.querySelectorAll("#viewPage");
+                   $("#weather-forecast-template").load(function(){
+                       var title = document.getElementById("title").value;
+                       var a = document.getElementById("logout").value;
+                       alert(title);
+                    });
+               </script>
             </div>
             <p>상품 리스트</p>
             <script id="weather-forecast-template" type="text/x-kendo-tmpl">
                 <div class="w-item-template" style="width: 100%;">
                 <a href="productDetails.html" data-role="button"  style="width: 100%;"  data-bind="click: productView" id="viewPage">
                     <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="100%;" height="100%;"/>
-                    <input type="hidden" id="product_index" value="${index}"/>
-                    <input type="hidden" id="product_title" value="${title}"/>
-                    <input type="hidden" id="product_content" value="${content}"/>
-                    <input type="hidden" id="product_price" value="${price}"/>
-                    <input type="hidden" id="product_img" value="${image}"/>
-                    <input type="hidden" id="product_type" value="${type}"/>
                     <input type="hidden" id="title" value="${title}"/>
                     <h4 class="w-date">${title}</h4>
                     <div class="w-temp">
@@ -44,6 +47,7 @@
                 </a>
                 </div>
            </script>
+           
             
     </body>
 </html>

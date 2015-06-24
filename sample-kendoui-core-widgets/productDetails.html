@@ -12,7 +12,7 @@
                 <div data-role="navbar">
                     <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
                     <span data-role="view-title"></span>
-                    <a href="cart.html" data-role="button" data-align="right" data-icon="cart" data-bind="click: cartList"></a>
+                    <a data-role="button" data-align="right" data-icon="cart" data-bind="click: cartList"></a>
                 </div>
             </header>
 
@@ -123,6 +123,7 @@
             <input type="hidden" id="product_content" value="${content}"/>
             <input type="hidden" id="product_price" value="${price}"/>
             <input type="hidden" id="product_img" value="${image}"/>
+            <input type="hidden" id="product_type" value="${type}"/>
                 <h4 id="title" class="w-date">${title}</h4>
                 <input type="button" data-bind="click: cart" value="장바구니"/>
                 <input type="button" value="바로 구매하기" />
