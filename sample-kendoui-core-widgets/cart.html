@@ -25,7 +25,7 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th></th>
+                        <th><input type="checkbox" id="checkAll" onclick="checkAll()"/></th>
                         <th>제품</th>
                         <th>수량</th>
                         <th>가격</th>
@@ -50,15 +50,32 @@
             <tr id="${index}">
                 <td><input type="checkbox" id="checkField"/></td>
                 <td style="display:none;"><input type="hidden" id="price" value="${price}" /></td>
+                <td style="display:none;"><input type="hidden" id="price1" value="${price}" /></td>
                 <td style="display:none;"><input type="hidden" id="p_index" value="${index}" /></td>
                 <td><a href="productDetails.html" data-role="button" data-bind="click: productView" id="viewPage">
                 <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="50%;" height="50%;"/>${title}</a></td>
-                <td align="center"><input type="number" value="0" style="width:40px;" min="0" max="99"/></td>
-                <td align="right" id=""><span>#:kendo.toString(price, "\\#\\#,\\#")# 원</span></td>
+                <td align="center"><input type="number" id="psu" value="1" style="width:40px;" min="1" max="99" onclick="psu()"/></td>
+                <td align="right" id="pval">#:kendo.toString(price, "\\#\\#,\\#")# 원</td>
             </tr>
             
         </script>
         <script>
+            function psu(){
+                var prices1 = document.querySelectorAll("#price1");
+                var prices = document.querySelectorAll("#price");
+                var psu = document.querySelectorAll("#psu");
+                var pval = document.querySelectorAll("#pval");
+                var a;
+                for(var i=0; i<prices.length; i++){
+                    if(psu[i].value>0){
+                        a = prices1[i].value*psu[i].value;
+                        prices[i].value=a
+                        a=kendo.toString(a,"##,#");
+                        pval[i].innerHTML = a+" 원";
+                    }
+                }
+            }
+            
             function set(){
                 var check = document.querySelectorAll("#checkField");
                 var prices = document.querySelectorAll("#price");
@@ -88,7 +105,33 @@
                             if(check[i].checked){
                                 var a = id[i].value;
                                 $("#"+a).empty();
+                                sessionStorage.removeItem("product_"+(i+1));
                             }
+                        }
+                    }
+                }
+            }
+            
+            function checkAll(){
+                var checkField = document.querySelectorAll("#checkField");
+                if(document.getElementById("checkAll").checked){
+                    if(checkField) {
+                        if(checkField.length > 1) {
+                            for(var i=0; i < checkField.length; i++) {
+                                checkField[i].checked = true;
+                            }
+                        } else {
+                            checkField.checked = true;
+                        }
+                    }
+                }else {
+                    if(checkField) {
+                        if(checkField.length > 1) {
+                            for(var j=0; j < checkField.length; j++) {
+                                checkField[j].checked = false;
+                            }
+                        } else {
+                            checkField.checked = false;
                         }
                     }
                 }
