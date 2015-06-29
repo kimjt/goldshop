@@ -5,16 +5,28 @@
         <title></title>
     </head>
     <body>
-        <div id="tabstrip-home"
+        <div 
         data-role="view"
         data-title="배송조회">
         <header data-role="header">
             <div data-role="navbar">
+                <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
                 <span data-role="view-title"></span>
                 <a data-role="button" data-align="right" data-icon="search"></a>
+                <a href="cart.html" data-role="button" data-align="right" data-icon="cart" data-bind="click: cartList"></a>
             </div>
         </header>
+            <h3>배송조회</h3>
+            주문번호 : <input type="text" id="" value=""/><a id="sid" data-role="button" onclick="sid()">찾기</a>
+            <div style="display:none;" id="sid1">
+                <h3>배송조회결과</h3>
+            </div>
         </div>
+        <script>
+            function sid(){
+                $("#sid1").show();
+            }
+        </script>
         <p>배송조회</p>
     </body>
 </html>

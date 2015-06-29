@@ -18,52 +18,80 @@
             <p>장바구니</p>
             <table width="100%">
                 <colgroup>
+                    <col width="5%"/>
+                    <col width="45%"/>
                     <col width="12%"/>
-                    <col width="50%"/>
                     <col width="28%"/>
                 </colgroup>
                 <thead>
                     <tr>
-                        <th>선택</th>
+                        <th></th>
                         <th>제품</th>
+                        <th>수량</th>
                         <th>가격</th>
                     </tr>
                 </thead>   
                 <tbody data-bind="source: cartDataSource"
-                        data-template="cart-forecast-template">
+                        data-template="cart-forecast-template" id="products">
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td>금액</td>
+                        <td>*</td>
+                        <td></td>
                         <td></td>
                         <td align="right" id="resultPrice">원</td>
                     </tr>
                 </tfoot>
             </table>
             <input type="button" onclick="set()" value="계산"/>
+            <input type="button" onclick="p_del()" value="삭제"/>
         </div>
         <script id="cart-forecast-template" type="text/x-kendo-tmpl">
-            <tr>
-                <td><input type="checkbox" id="${index}"/></td>
+            <tr id="${index}">
+                <td><input type="checkbox" id="checkField"/></td>
                 <td style="display:none;"><input type="hidden" id="price" value="${price}" /></td>
+                <td style="display:none;"><input type="hidden" id="p_index" value="${index}" /></td>
                 <td><a href="productDetails.html" data-role="button" data-bind="click: productView" id="viewPage">
                 <img src="http://samgital.co.kr:8080/mobile/products/${image}" width="50%;" height="50%;"/>${title}</a></td>
+                <td align="center"><input type="number" value="0" style="width:40px;" min="0" max="99"/></td>
                 <td align="right" id=""><span>#:kendo.toString(price, "\\#\\#,\\#")# 원</span></td>
             </tr>
             
         </script>
         <script>
             function set(){
+                var check = document.querySelectorAll("#checkField");
                 var prices = document.querySelectorAll("#price");
                 var result=0;
                 var a;
-                for(var i=0;i<prices.length;i++){
-                    a = prices[i].value;
-                    a *=1;
-                    result += a;
+                if(check){
+                    for(var i=0; i<check.length; i++){
+                        if(check[i].checked){
+                            a = prices[i].value;
+                            a *=1;
+                            result += a;
+                        }
+                    }
                 }
                 result = kendo.toString(result,"##,#");
                 document.getElementById("resultPrice").innerHTML =result+" 원";
+            }
+            
+            function p_del(){
+                var check = document.querySelectorAll("#checkField");
+                var id = document.querySelectorAll("#p_index");
+                var checkIndex ="";
+                var checkedCount = 0;
+                if(check){
+                    if(check.length>0){
+                        for(var i=0; i<check.length; i++){
+                            if(check[i].checked){
+                                var a = id[i].value;
+                                $("#"+a).empty();
+                            }
+                        }
+                    }
+                }
             }
         </script>
     </body>

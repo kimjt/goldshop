@@ -26,7 +26,7 @@
         function url(){
             var link =  document.location.href;
             var num = link.split("=");
-            alert(num[1]);
+            alert(link);
             $("#index").val(num[1]);
         }
            
@@ -82,6 +82,7 @@
         <a href="goldList.html" data-role="button" data-bind="click: pageEarr"><img src="styles/images/earring.jpg" width="100px;" height="100px;"/></a>
         <button onclick="shatest();">test</button>
         <input type="text" id="text1"/>
+        <button onclick="url()">url확인</button>
         <button onclick="aesencoding();">인코딩</button>
         <button onclick="aesdecoding();">디코딩</button><br>
         <input type="text" id="testValue" />

@@ -5,13 +5,15 @@
         <title></title>
     </head>
     <body>
-        <div id="tabstrip-home"
+        <div 
         data-role="view"
         data-title="구매내역">
             <header data-role="header">
                 <div data-role="navbar">
                     <a onclick="history.back()" data-role="button" data-align="left" data-icon="reply"></a>
                     <span data-role="view-title"></span>
+                    <a data-role="button" data-align="right" data-icon="search"></a>
+                    <a href="cart.html" data-role="button" data-align="right" data-icon="cart" data-bind="click: cartList"></a>
                 </div>
             </header>
             <p>구매내역</p>
